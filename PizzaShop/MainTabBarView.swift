@@ -9,7 +9,28 @@ import SwiftUI
 
 struct MainTabBarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        TabView {
+            
+            CatalogView()
+                .tabItem {
+                    Image(systemName: "menucard")
+                    Text("Catalog")
+                }
+            
+            CartView()
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Cart")
+                }
+            
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
+        }
+        
     }
 }
 
