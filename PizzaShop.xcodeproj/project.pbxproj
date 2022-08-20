@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		CE3BB89628B10E62009C9996 /* PizzaShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */; };
-		CE3BB89828B10E62009C9996 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89728B10E62009C9996 /* ContentView.swift */; };
+		CE3BB89828B10E62009C9996 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89728B10E62009C9996 /* AuthView.swift */; };
 		CE3BB89A28B10E64009C9996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3BB89928B10E64009C9996 /* Assets.xcassets */; };
 		CE3BB89D28B10E64009C9996 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3BB89C28B10E64009C9996 /* Preview Assets.xcassets */; };
+		CE3BB8A628B12C52009C9996 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB8A528B12C52009C9996 /* MainTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE3BB89228B10E62009C9996 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopApp.swift; sourceTree = "<group>"; };
-		CE3BB89728B10E62009C9996 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE3BB89728B10E62009C9996 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CE3BB89928B10E64009C9996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE3BB89C28B10E64009C9996 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE3BB8A528B12C52009C9996 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */,
-				CE3BB89728B10E62009C9996 /* ContentView.swift */,
+				CE3BB89728B10E62009C9996 /* AuthView.swift */,
+				CE3BB8A528B12C52009C9996 /* MainTabBarView.swift */,
 				CE3BB89928B10E64009C9996 /* Assets.xcassets */,
 				CE3BB89B28B10E64009C9996 /* Preview Content */,
 			);
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3BB89828B10E62009C9996 /* ContentView.swift in Sources */,
+				CE3BB89828B10E62009C9996 /* AuthView.swift in Sources */,
+				CE3BB8A628B12C52009C9996 /* MainTabBarView.swift in Sources */,
 				CE3BB89628B10E62009C9996 /* PizzaShopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
