@@ -39,6 +39,12 @@ struct ProductCell: View {
 
 struct ProductCell_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCell(product: Product.getHardInfo())
+        ProductCell(product: Product(
+            id: "1",
+            title: "Burger - pizza",
+            imageURL: "Not found",
+            price: 500,
+            description: "Nice with beer"
+        ))
     }
 }

@@ -12,13 +12,15 @@ struct MainTabBarView: View {
         
         TabView {
             
-            CatalogView()
-                .tabItem {
-                    Image(systemName: "menucard")
-                    Text("Catalog")
-                }
+            NavigationView{
+                CatalogView()
+            }
+            .tabItem {
+                Image(systemName: "menucard")
+                Text("Catalog")
+            }
             
-            CartView()
+            CartView() 
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Cart")
