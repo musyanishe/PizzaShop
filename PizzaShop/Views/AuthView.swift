@@ -55,7 +55,18 @@ struct AuthView: View {
                     
                     if isAuth {
                         print("Авторизация пользователя через Firebase")
-                        isTabViewShown.toggle()
+                        
+                        AuthService.shared.signIn(email: self.mail, password: self.password) { result in
+                            switch result {
+                            case .success(let _):
+                                isTabViewShown.toggle()
+                            case . failure(let error):
+                                alertMessage = "Ошибка авторизации: \(error.localizedDescription)"
+                                isAlertShown.toggle()
+                            }
+                        }
+                        
+                        
                     } else {
                         print("Регистрация")
                         
@@ -65,11 +76,11 @@ struct AuthView: View {
                             return
                         }
                         
-                        AuthService.shared.singUP(email: self.mail, password: self.password) { result in
+                        AuthService.shared.signUP(email: self.mail, password: self.password) { result in
                             switch result {
                                 
                             case .success(let user):
-                                alertMessage = "Вы зарегистрировались с email: \(user.email)"
+                                alertMessage = "Вы зарегистрировались с email: \(user.email!)"
                                 self.isAlertShown.toggle()
                                 self.mail = ""
                                 self.password = ""
@@ -134,7 +145,9 @@ struct AuthView: View {
         )
         .animation(Animation.easeInOut(duration: 0.3), value: isAuth)
         .fullScreenCover(isPresented: $isTabViewShown) {
-            MainTabBarView()
+            
+            let mainTabBarViewModel = MainTabBarViewModel(user: AuthService.shared.currentUser!)
+            MainTabBarView(viewModel: mainTabBarViewModel)
         }
     }
 }
