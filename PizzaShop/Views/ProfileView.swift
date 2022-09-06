@@ -13,10 +13,13 @@ struct ProfileView: View {
     @State private var isQuitAlertPresented = false
     @State private var isAuthViewPresented = false
     
+    @StateObject var viewmodel: ProfileViewModel
+    
     var body: some View {
         
         VStack(alignment: .center, spacing: 20) {
             HStack(spacing: 16) {
+            
                 Image("user")
                     .resizable()
                     .frame(width: 80, height: 80)
@@ -37,22 +40,23 @@ struct ProfileView: View {
                         } label: {
                             Text("Camera")
                         }
-                        
-
                     }
                 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Мирослав Иванов")
-                        .bold()
-                    Text("+7(911)189-22-12")
+                    TextField("Имя", text: $viewmodel.profile.name)
+                        .font(.body.bold())
+                    HStack {
+                        Text("+7")
+                        TextField("Телефон", value: $viewmodel.profile.phone, format: .number)
+                    }
                 }
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Адрес доставки:")
+                Text("Адрес доставки")
                     .bold()
-                Text("Россия, Московская область, г. Несуществующий городок, ул. Юных мечт, д. 23, кв.35")
-            }
+                TextField("Ваш адрес", text: $viewmodel.profile.address)
+            }.padding()
             
             //Таблица с заказами
             List {
@@ -73,23 +77,26 @@ struct ProfileView: View {
                     Button {
                         isAuthViewPresented.toggle()
                     } label: {
-                        Text("Yes")
+                        Text("Да")
                     }
-
                 }.fullScreenCover(isPresented: $isAuthViewPresented, onDismiss: nil) {
                     AuthView()
                 }
-
-            
         }
-        
-        
-        
+            
+            //метод, который будет каждый раз срабатывать при нажатии на кнопку return
+            .onSubmit {
+                viewmodel.setProfile()
+            }
+            
+            .onAppear {
+                viewmodel.getProfile()
+            }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(viewmodel: ProfileViewModel(profile: PropertiesUser(id: "", name: "Vasya Pirogkof", phone: 3876532875, address: "tratata")))
     }
 }

@@ -36,7 +36,7 @@ class AuthService {
                         address: ""
                     )
                     
-                    DataBaseService.shared.setUser(user: propertiesUser) { resultDB in
+                    DataBaseService.shared.setProfile(user: propertiesUser) { resultDB in
                         switch resultDB {
                         case .success(_):
                             completion(.success(result.user))

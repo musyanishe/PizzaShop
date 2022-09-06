@@ -30,7 +30,11 @@ struct MainTabBarView: View {
                     Text("Cart")
                 }
             
-            ProfileView()
+            ProfileView(viewmodel: ProfileViewModel(profile: PropertiesUser(
+                id: "",
+                name: "",
+                phone: 65348924,
+                address: "")))
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
