@@ -19,6 +19,10 @@ class DataBaseService {
         return dataBase.collection("users")
     } //это референс(или ссылка) уже на саму коллекцию пользователей, мы могли бы эту коллекцию создать и на самом сайте, сейчас делаем кодом
     
+    private var ordersRef: CollectionReference {
+        return dataBase.collection("orders")
+    }
+    
     private init() {}
     
     func setProfile(user: PropertiesUser, completion: @escaping(Result<PropertiesUser, Error>) -> Void) {
@@ -58,4 +62,32 @@ class DataBaseService {
             completion(.success(user))
         }
     }
+    
+    func setOrder(order: Order, completion: @escaping (Result<Order, Error>) -> Void) {
+        ordersRef.document(order.id).setData(order.representation) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                self.setPositions(to: order.id, positions: order.positions) { result in
+                    switch result {
+                    case .success(let positions):
+                        completion(.success(order))
+                        print(positions.count)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
+    
+    func setPositions(to orderID: String, positions: [Position], completion: @escaping (Result<[Position], Error>) -> Void) {
+        let positionsRef = ordersRef.document(orderID).collection("positions")
+        
+        for position in positions {
+            positionsRef.document(position.id).setData(position.representation)
+        }
+        completion(.success(positions))
+    }
+    
 }

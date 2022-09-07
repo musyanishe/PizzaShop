@@ -58,7 +58,7 @@ struct AuthView: View {
                         
                         AuthService.shared.signIn(email: self.mail, password: self.password) { result in
                             switch result {
-                            case .success(let _):
+                            case .success(_):
                                 isTabViewShown.toggle()
                             case . failure(let error):
                                 alertMessage = "Ошибка авторизации: \(error.localizedDescription)"

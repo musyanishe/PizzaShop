@@ -16,4 +16,17 @@ struct Position: Identifiable {
     var cost: Int {
         return product.price * self.count
     }
+    //Позиция у нас состоит из продуктов, только в базу данных нам надо, чтобы отправлялся не сам продукт а его определенные свойства, поэтому здесь делаем репрезентацию, а далее создаем еще один файл с сущностью "Заказ" (Order)
+    var representation: [String: Any] {
+        
+        var repres = [String: Any]()
+        
+        repres["id"] = id
+        repres["count"] = count
+        repres["title"] = product.title
+        repres["price"] = product.price
+        repres["cost"] = cost
+        
+        return repres
+    }
 }
