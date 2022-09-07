@@ -60,7 +60,14 @@ struct ProfileView: View {
             
             //Таблица с заказами
             List {
-                Text("Ваши заказы будут тут")
+                if viewmodel.orders.count == 0 {
+                    Text("Ваши заказы будут тут")
+                } else {
+                    ForEach(viewmodel.orders, id: \.id) { order in
+                        OrderCell(order: order)
+                    }
+                }
+                
             }.listStyle(.plain)
             
             Button {
@@ -91,6 +98,7 @@ struct ProfileView: View {
             
             .onAppear {
                 viewmodel.getProfile()
+                viewmodel.getOrders()
             }
     }
 }

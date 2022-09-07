@@ -62,6 +62,29 @@ class DataBaseService {
             completion(.success(user))
         }
     }
+    //здесь стринг делаем опциональным, так как этим же методом будет пользователь администратор, то есть если мы передаем nil то у нас достаются из базы все заказы, а если не nil то тогда мы ищем конретного юзера в базе
+    func getOredrs(by userID: String?, completion: @escaping (Result<[Order], Error>) -> Void) {
+        self.ordersRef.getDocuments { qSnap, error in
+            
+            if let qSnap = qSnap {
+                var orders = [Order]()
+                for doc in qSnap.documents {
+                    if let userID = userID {
+                        if let order = Order(doc: doc), order.userID == userID {
+                            orders.append(order)
+                        }
+                    } else { //ветка для админа
+                        if let order = Order(doc: doc) {
+                            orders.append(order)
+                        }
+                    }
+                }
+                completion(.success(orders))
+            } else if let error = error {
+                completion(.failure(error))
+            }
+        }
+    }
     
     func setOrder(order: Order, completion: @escaping (Result<Order, Error>) -> Void) {
         ordersRef.document(order.id).setData(order.representation) { error in
