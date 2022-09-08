@@ -30,6 +30,10 @@
 		CE862F3F28C7865F0076FD78 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE862F3E28C7865F0076FD78 /* ProfileViewModel.swift */; };
 		CE8B4AA328C88319002DABED /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B4AA228C88319002DABED /* Order.swift */; };
 		CE8B4AA528C88CC0002DABED /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B4AA428C88CC0002DABED /* OrderStatus.swift */; };
+		CEB2EE3528CA14DC003823B4 /* AdminOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3428CA14DC003823B4 /* AdminOrdersView.swift */; };
+		CEB2EE3728CA1701003823B4 /* AdminOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3628CA1701003823B4 /* AdminOrdersViewModel.swift */; };
+		CEB2EE3928CA19E1003823B4 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3828CA19E0003823B4 /* OrderView.swift */; };
+		CEB2EE3B28CA19FC003823B4 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3A28CA19FC003823B4 /* OrderViewModel.swift */; };
 		CEC7DB5A28B1853200E85D41 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5928B1853200E85D41 /* Product.swift */; };
 		CEC7DB5D28B1861000E85D41 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5C28B1861000E85D41 /* ProductCell.swift */; };
 		CEC7DB6028B18DFB00E85D41 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5F28B18DFB00E85D41 /* CatalogViewModel.swift */; };
@@ -59,6 +63,10 @@
 		CE862F3E28C7865F0076FD78 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CE8B4AA228C88319002DABED /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CE8B4AA428C88CC0002DABED /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderStatus.swift; path = PizzaShop/Models/OrderStatus.swift; sourceTree = SOURCE_ROOT; };
+		CEB2EE3428CA14DC003823B4 /* AdminOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersView.swift; sourceTree = "<group>"; };
+		CEB2EE3628CA1701003823B4 /* AdminOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersViewModel.swift; sourceTree = "<group>"; };
+		CEB2EE3828CA19E0003823B4 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		CEB2EE3A28CA19FC003823B4 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		CEC7DB5928B1853200E85D41 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CEC7DB5C28B1861000E85D41 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		CEC7DB5F28B18DFB00E85D41 /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
@@ -129,9 +137,19 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		CEB2EE3128CA129D003823B4 /* AdminInterface */ = {
+			isa = PBXGroup;
+			children = (
+				CEB2EE3428CA14DC003823B4 /* AdminOrdersView.swift */,
+				CEB2EE3828CA19E0003823B4 /* OrderView.swift */,
+			);
+			path = AdminInterface;
+			sourceTree = "<group>";
+		};
 		CEC7DB5728B1850F00E85D41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEB2EE3128CA129D003823B4 /* AdminInterface */,
 				CE3BB89728B10E62009C9996 /* AuthView.swift */,
 				CE3BB8A528B12C52009C9996 /* MainTabBarView.swift */,
 				CE3BB8A728B1302D009C9996 /* CatalogView.swift */,
@@ -172,6 +190,8 @@
 				CE7DE5D228B4C43B00A1EB23 /* CartViewModel.swift */,
 				CE5128BC28C61CB0007EA95D /* MainTabBarViewModel.swift */,
 				CE862F3E28C7865F0076FD78 /* ProfileViewModel.swift */,
+				CEB2EE3628CA1701003823B4 /* AdminOrdersViewModel.swift */,
+				CEB2EE3A28CA19FC003823B4 /* OrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -256,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3BB8AA28B13039009C9996 /* CartView.swift in Sources */,
+				CEB2EE3728CA1701003823B4 /* AdminOrdersViewModel.swift in Sources */,
 				CE862F3F28C7865F0076FD78 /* ProfileViewModel.swift in Sources */,
 				CE8B4AA328C88319002DABED /* Order.swift in Sources */,
 				CEEA610428B2D12800115881 /* ProductDetailView.swift in Sources */,
@@ -266,15 +287,18 @@
 				CE3BB8A628B12C52009C9996 /* MainTabBarView.swift in Sources */,
 				CE7DE5D528B4C75C00A1EB23 /* PositionCell.swift in Sources */,
 				CE3BB8A828B1302E009C9996 /* CatalogView.swift in Sources */,
+				CEB2EE3528CA14DC003823B4 /* AdminOrdersView.swift in Sources */,
 				CEEA610628B2D62C00115881 /* ProductDetailViewModel.swift in Sources */,
 				CE510FE228C92DC000C09558 /* OrderCell.swift in Sources */,
 				CE8B4AA528C88CC0002DABED /* OrderStatus.swift in Sources */,
 				CE5128BD28C61CB1007EA95D /* MainTabBarViewModel.swift in Sources */,
 				CE5128BF28C62399007EA95D /* PropertiesUser.swift in Sources */,
 				CE3BB8AC28B13044009C9996 /* ProfileView.swift in Sources */,
+				CEB2EE3928CA19E1003823B4 /* OrderView.swift in Sources */,
 				CEC7DB5D28B1861000E85D41 /* ProductCell.swift in Sources */,
 				CE3BB89628B10E62009C9996 /* PizzaShopApp.swift in Sources */,
 				CE5B276528B6517E00B9453E /* AuthService.swift in Sources */,
+				CEB2EE3B28CA19FC003823B4 /* OrderViewModel.swift in Sources */,
 				CEC7DB5A28B1853200E85D41 /* Product.swift in Sources */,
 				CEC7DB6028B18DFB00E85D41 /* CatalogViewModel.swift in Sources */,
 			);

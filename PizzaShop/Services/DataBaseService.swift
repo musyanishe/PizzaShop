@@ -47,8 +47,9 @@ class DataBaseService {
     }
     
     //docSnapShot - это раздел на firestore database со свойствами юзера по id
-    func getProfile(completion: @escaping (Result<PropertiesUser, Error>) -> Void) {
-        usersRef.document(AuthService.shared.currentUser!.uid).getDocument { docSnapShot, error in
+    func getProfile(by userID: String? = nil, completion: @escaping (Result<PropertiesUser, Error>) -> Void) {
+        
+        usersRef.document(userID != nil ? userID! : AuthService.shared.currentUser!.uid).getDocument { docSnapShot, error in
             guard let snap = docSnapShot else { return }
             guard let data = snap.data() else { return }
             
@@ -63,7 +64,7 @@ class DataBaseService {
         }
     }
     //здесь стринг делаем опциональным, так как этим же методом будет пользователь администратор, то есть если мы передаем nil то у нас достаются из базы все заказы, а если не nil то тогда мы ищем конретного юзера в базе
-    func getOredrs(by userID: String?, completion: @escaping (Result<[Order], Error>) -> Void) {
+    func getOrders(by userID: String?, completion: @escaping (Result<[Order], Error>) -> Void) {
         self.ordersRef.getDocuments { qSnap, error in
             
             if let qSnap = qSnap {
