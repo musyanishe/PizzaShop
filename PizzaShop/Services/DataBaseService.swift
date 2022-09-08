@@ -112,5 +112,24 @@ class DataBaseService {
         }
         completion(.success(positions))
     }
+    //отправляем в запросе id заказа, переходим в этот заказ, достаем из него позиции и передаем в комплишн массив позиций
+    func getPositions(by orderID: String, completion: @escaping (Result<[Position], Error>) -> Void) {
+        
+        let positionsRef = ordersRef.document(orderID).collection("positions")
+        positionsRef.getDocuments { qSnap, error in
+            if let qSnap = qSnap {
+                var positions = [Position]()
+                
+                for doc in qSnap.documents {
+                   if let position = Position(doc: doc) {
+                        positions.append(position)
+                    }
+                }
+                completion(.success(positions))
+            } else if let error = error {
+                completion(.failure(error))
+            }
+        }
+    }
     
 }
