@@ -37,6 +37,8 @@
 		CEC7DB5A28B1853200E85D41 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5928B1853200E85D41 /* Product.swift */; };
 		CEC7DB5D28B1861000E85D41 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5C28B1861000E85D41 /* ProductCell.swift */; };
 		CEC7DB6028B18DFB00E85D41 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5F28B18DFB00E85D41 /* CatalogViewModel.swift */; };
+		CECFBFFD28D0AE4000AA7457 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFBFFC28D0AE4000AA7457 /* ImagePicker.swift */; };
+		CECFBFFF28D0B2BC00AA7457 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFBFFE28D0B2BC00AA7457 /* AddProductView.swift */; };
 		CEEA610428B2D12800115881 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA610328B2D12800115881 /* ProductDetailView.swift */; };
 		CEEA610628B2D62C00115881 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA610528B2D62C00115881 /* ProductDetailViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		CEC7DB5928B1853200E85D41 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CEC7DB5C28B1861000E85D41 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		CEC7DB5F28B18DFB00E85D41 /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
+		CECFBFFC28D0AE4000AA7457 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CECFBFFE28D0B2BC00AA7457 /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		CEEA610328B2D12800115881 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		CEEA610528B2D62C00115881 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +146,7 @@
 			children = (
 				CEB2EE3428CA14DC003823B4 /* AdminOrdersView.swift */,
 				CEB2EE3828CA19E0003823B4 /* OrderView.swift */,
+				CECFBFFE28D0B2BC00AA7457 /* AddProductView.swift */,
 			);
 			path = AdminInterface;
 			sourceTree = "<group>";
@@ -154,7 +159,6 @@
 				CE3BB8A528B12C52009C9996 /* MainTabBarView.swift */,
 				CE3BB8A728B1302D009C9996 /* CatalogView.swift */,
 				CE3BB8A928B13039009C9996 /* CartView.swift */,
-				CE8B4AA428C88CC0002DABED /* OrderStatus.swift */,
 				CE3BB8AB28B13044009C9996 /* ProfileView.swift */,
 				CEEA610328B2D12800115881 /* ProductDetailView.swift */,
 			);
@@ -168,6 +172,7 @@
 				CE7DE5D028B4C3E100A1EB23 /* Position.swift */,
 				CE5128BE28C62399007EA95D /* PropertiesUser.swift */,
 				CE8B4AA228C88319002DABED /* Order.swift */,
+				CE8B4AA428C88CC0002DABED /* OrderStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				CEC7DB5C28B1861000E85D41 /* ProductCell.swift */,
 				CE7DE5D428B4C75B00A1EB23 /* PositionCell.swift */,
 				CE510FE128C92DC000C09558 /* OrderCell.swift */,
+				CECFBFFC28D0AE4000AA7457 /* ImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				CE3BB8AA28B13039009C9996 /* CartView.swift in Sources */,
 				CEB2EE3728CA1701003823B4 /* AdminOrdersViewModel.swift in Sources */,
 				CE862F3F28C7865F0076FD78 /* ProfileViewModel.swift in Sources */,
+				CECFBFFD28D0AE4000AA7457 /* ImagePicker.swift in Sources */,
 				CE8B4AA328C88319002DABED /* Order.swift in Sources */,
 				CEEA610428B2D12800115881 /* ProductDetailView.swift in Sources */,
 				CE5128C128C624B8007EA95D /* DataBaseService.swift in Sources */,
@@ -290,6 +297,7 @@
 				CEB2EE3528CA14DC003823B4 /* AdminOrdersView.swift in Sources */,
 				CEEA610628B2D62C00115881 /* ProductDetailViewModel.swift in Sources */,
 				CE510FE228C92DC000C09558 /* OrderCell.swift in Sources */,
+				CECFBFFF28D0B2BC00AA7457 /* AddProductView.swift in Sources */,
 				CE8B4AA528C88CC0002DABED /* OrderStatus.swift in Sources */,
 				CE5128BD28C61CB1007EA95D /* MainTabBarViewModel.swift in Sources */,
 				CE5128BF28C62399007EA95D /* PropertiesUser.swift in Sources */,
@@ -432,6 +440,8 @@
 				DEVELOPMENT_TEAM = DTSRHZ7G5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Разрешить использовать камеру?";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Разрешить использовать галлерею для выбора фото?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +471,8 @@
 				DEVELOPMENT_TEAM = DTSRHZ7G5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Разрешить использовать камеру?";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Разрешить использовать галлерею для выбора фото?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
