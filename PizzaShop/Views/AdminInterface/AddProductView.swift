@@ -12,8 +12,9 @@ struct AddProductView: View {
     @State private var showImagePicker = false
     @State private var image = UIImage(named: "pizzaPH")!
     @State private var title: String = ""
-    @State private var price: Int = 0
+    @State private var price: Int? = nil
     @State private var description: String = ""
+    @Environment (\.dismiss) var dismiss
     
     var body: some View {
         
@@ -40,7 +41,23 @@ struct AddProductView: View {
                 .padding()
             
             Button {
-                print("Сохранить")
+                guard let price = price else {
+                    print("Невозможно извлечь цену из TextField")
+                    return
+                }
+                let product = Product(id: UUID().uuidString, title: title, price: price, description: description)
+                guard let imageData = image.jpegData(compressionQuality: 0.15) else {
+                    print("Может тут косяк?)")
+                    return }
+                DataBaseService.shared.setProduct(product: product, image: imageData) { result in
+                    switch result {
+                    case .success(let product):
+                        print(product.title)
+                        dismiss()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
             } label: {
                 Text("Сохранить")
                     .padding()

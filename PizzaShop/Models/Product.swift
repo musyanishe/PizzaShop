@@ -12,12 +12,20 @@ struct Product {
     
     var id: String
     var title: String
-    var imageURL: String
+    var imageURL: String = ""
     var price: Int
     var description: String
     
 //    var ordersCount: Int
 //    var isRecommend: Bool
     
+    var representation: [String: Any] {
+        var repres = [String: Any]()
+        repres["id"] = id
+        repres["title"] = title
+        repres["price"] = price
+        repres["description"] = description
+        return repres
+    }
 }
 

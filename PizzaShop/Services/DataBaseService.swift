@@ -15,13 +15,11 @@ class DataBaseService {
     
     private let dataBase = Firestore.firestore() //по этой ссылке мы входим в нашу базу данных, если посмтреть на сайт Firebase, то эта база лежит во вкладке FireStore Database и получаем доступ ко всей папке с коллекциями, в моем случае это pizzashop-10778
     
-    private var usersRef: CollectionReference {
-        return dataBase.collection("users")
-    } //это референс(или ссылка) уже на саму коллекцию пользователей, мы могли бы эту коллекцию создать и на самом сайте, сейчас делаем кодом
+    private var usersRef: CollectionReference { return dataBase.collection("users") } //это референс(или ссылка) уже на саму коллекцию пользователей, мы могли бы эту коллекцию создать и на самом сайте, сейчас делаем кодом
     
-    private var ordersRef: CollectionReference {
-        return dataBase.collection("orders")
-    }
+    private var ordersRef: CollectionReference { return dataBase.collection("orders") }
+    
+    private var productsRef: CollectionReference { return dataBase.collection("products") }
     
     private init() {}
     
@@ -128,6 +126,26 @@ class DataBaseService {
                 }
                 completion(.success(positions))
             } else if let error = error {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    //метод сохранения продукта с Storage
+    func setProduct(product: Product, image: Data, completion: @escaping (Result<Product, Error>) -> Void) {
+        StorageService.shared.upload(id: product.id, image: image) { result in
+            switch result {
+            case .success(let sizeInfo):
+                print(sizeInfo)
+                
+                self.productsRef.document(product.id).setData(product.representation) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(product))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
             }
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE39C7C328D35D0A00C27AAD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39C7C228D35D0A00C27AAD /* StorageService.swift */; };
 		CE3BB89628B10E62009C9996 /* PizzaShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */; };
 		CE3BB89828B10E62009C9996 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89728B10E62009C9996 /* AuthView.swift */; };
 		CE3BB89A28B10E64009C9996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3BB89928B10E64009C9996 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE39C7C228D35D0A00C27AAD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		CE3BB89228B10E62009C9996 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopApp.swift; sourceTree = "<group>"; };
 		CE3BB89728B10E62009C9996 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				CE5B276428B6517D00B9453E /* AuthService.swift */,
 				CE5128C028C624B7007EA95D /* DataBaseService.swift */,
+				CE39C7C228D35D0A00C27AAD /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				CEEA610628B2D62C00115881 /* ProductDetailViewModel.swift in Sources */,
 				CE510FE228C92DC000C09558 /* OrderCell.swift in Sources */,
 				CECFBFFF28D0B2BC00AA7457 /* AddProductView.swift in Sources */,
+				CE39C7C328D35D0A00C27AAD /* StorageService.swift in Sources */,
 				CE8B4AA528C88CC0002DABED /* OrderStatus.swift in Sources */,
 				CE5128BD28C61CB1007EA95D /* MainTabBarViewModel.swift in Sources */,
 				CE5128BF28C62399007EA95D /* PropertiesUser.swift in Sources */,
