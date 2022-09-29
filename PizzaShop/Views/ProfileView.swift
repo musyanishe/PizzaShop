@@ -18,45 +18,44 @@ struct ProfileView: View {
     var body: some View {
         
         VStack(alignment: .center, spacing: 20) {
-            HStack(spacing: 16) {
+//            HStack(spacing: 16) {
             
-                Image("user")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .background(Color("lightGray"))
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        isAvatarAlertPresented.toggle()
-                    }
-                    .confirmationDialog("Откуда взять аву?", isPresented: $isAvatarAlertPresented) {
-                        Button {
-                            print("Library")
-                        } label: {
-                            Text("From Library")
-                        }
-                        
-                        Button {
-                            print("Camera")
-                        } label: {
-                            Text("Camera")
-                        }
-                    }
+//                Image("user")
+//                    .resizable()
+//                    .frame(width: 80, height: 80)
+//                    .background(Color("lightGray"))
+//                    .clipShape(Circle())
+//                    .onTapGesture {
+//                        isAvatarAlertPresented.toggle()
+//                    }
+//                    .confirmationDialog("Откуда взять аву?", isPresented: $isAvatarAlertPresented) {
+//                        Button {
+//                            print("Library")
+//                        } label: {
+//                            Text("From Library")
+//                        }
+//
+//                        Button {
+//                            print("Camera")
+//                        } label: {
+//                            Text("Camera")
+//                        }
+//                    }
                 
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading) {
                     TextField("Имя", text: $viewmodel.profile.name)
                         .font(.body.bold())
                     HStack {
                         Text("+7")
-                        TextField("Телефон", value: $viewmodel.profile.phone, format: .number)
+                        TextField("Телефон", value: $viewmodel.profile.phone, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
-                }
-            }
+                    Text("Адрес доставки")
+                        .bold()
+                    TextField("Ваш адрес", text: $viewmodel.profile.address)
+                }.padding()
+//            }
             
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Адрес доставки")
-                    .bold()
-                TextField("Ваш адрес", text: $viewmodel.profile.address)
-            }.padding()
             
             //Таблица с заказами
             List {

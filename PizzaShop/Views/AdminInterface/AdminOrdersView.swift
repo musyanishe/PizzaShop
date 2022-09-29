@@ -13,6 +13,8 @@ struct AdminOrdersView: View {
     @State private var isOrderViewShow = false
     @State private var isShowAuthView = false
     @State private var isShowAddProductView = false
+    @State private var isAlertPresented = false
+    @State private var isShowAddDrinkView = false
     
     var body: some View {
         
@@ -29,13 +31,28 @@ struct AdminOrdersView: View {
                 Spacer()
                 
                 Button {
-                    isShowAddProductView.toggle()
+                    isAlertPresented.toggle()
                 } label: {
                     Text("Добавить товар")
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.green)
                         .cornerRadius(8)
+                }
+                .confirmationDialog("Какой продукт добавить?", isPresented: $isAlertPresented) {
+                    
+                    Button {
+                        isShowAddProductView.toggle()
+                    } label: {
+                        Text("Добавить пиццу")
+                    }
+                    
+                    Button {
+                        isShowAddDrinkView.toggle()
+                    } label: {
+                        Text("Добавить напиток")
+                    }
+                    
                 }
 
                 
@@ -71,6 +88,9 @@ struct AdminOrdersView: View {
         }
         .sheet(isPresented: $isShowAddProductView) {
             AddProductView()
+        }
+        .sheet(isPresented: $isShowAddDrinkView) {
+            AddDrinkView()
         }
     }
 }

@@ -1,16 +1,16 @@
 //
-//  AddProductView.swift
+//  AddDrinkView.swift
 //  PizzaShop
 //
-//  Created by Евгения Шевцова on 13.09.2022.
+//  Created by Евгения Шевцова on 26.09.2022.
 //
 
 import SwiftUI
 
-struct AddProductView: View {
+struct AddDrinkView: View {
     
     @State private var showImagePicker = false
-    @State private var image = UIImage(named: "pizzaPH")!
+    @State private var image = UIImage(named: "GreenTea")!
     @State private var title: String = ""
     @State private var price: Int? = nil
     @State private var description: String = ""
@@ -22,23 +22,23 @@ struct AddProductView: View {
         
         VStack {
             
-            Text("Добавить пиццу")
+            Text("Добавить напиток")
                 .font(.title2.bold())
             
             Image(uiImage: image)
                 .resizable()
-                .frame(maxWidth: .infinity, maxHeight: 260)
+                .frame(minWidth: 150, idealWidth: 200, maxWidth: 220, minHeight: 220, idealHeight: 250, maxHeight: 270)
                 .cornerRadius(20)
                 .padding(.horizontal)
                 .onTapGesture {
                     showImagePicker.toggle()
                 }
-            TextField("Название продукта", text: $title)
+            TextField("Название", text: $title)
                 .padding()
-            TextField("Цена продукта", value: $price, format: .number)
+            TextField("Цена", value: $price, format: .number)
                 .keyboardType(.numberPad)
                 .padding()
-            TextField("Описание продукта", text: $description)
+            TextField("Описание", text: $description)
                 .padding()
             
             Button {
@@ -46,11 +46,11 @@ struct AddProductView: View {
                     print("Невозможно извлечь цену из TextField")
                     return
                 }
-                let product = Product(id: UUID().uuidString, title: title, price: price, description: description, isRecommend: isRecommend)
+                let drink = Product(id: UUID().uuidString, title: title, price: price, description: description, isRecommend: isRecommend)
                 guard let imageData = image.jpegData(compressionQuality: 0.15) else {
                     print("Может тут косяк?)")
                     return }
-                DataBaseService.shared.setProduct(product: product, image: imageData) { result in
+                DataBaseService.shared.setDrink(drink: drink, image: imageData) { result in
                     switch result {
                     case .success(let product):
                         print(product.title)
@@ -77,11 +77,10 @@ struct AddProductView: View {
         .padding(.vertical)
     }
     
-    
 }
 
-struct AddProductView_Previews: PreviewProvider {
+struct AddDrinkView_Previews: PreviewProvider {
     static var previews: some View {
-        AddProductView()
+        AddDrinkView()
     }
 }

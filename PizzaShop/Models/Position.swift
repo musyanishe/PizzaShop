@@ -48,7 +48,8 @@ struct Position: Identifiable {
                                        title: title,
                                        imageURL: "",
                                        price: price,
-                                       description: "")
+                                       description: "",
+        isRecommend: true)
         guard let count = data["count"] as? Int else { return nil}
         
         self.id = id

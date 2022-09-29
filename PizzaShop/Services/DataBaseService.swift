@@ -21,6 +21,8 @@ class DataBaseService {
     
     private var productsRef: CollectionReference { return dataBase.collection("products") }
     
+    private var drinksRef: CollectionReference { return dataBase.collection("drinks") }
+    
     private init() {}
     
     func setProfile(user: PropertiesUser, completion: @escaping(Result<PropertiesUser, Error>) -> Void) {
@@ -131,7 +133,7 @@ class DataBaseService {
         }
     }
     
-    //метод сохранения продукта с Storage
+    //MARK: - метод сохранения продукта с Storage
     func setProduct(product: Product, image: Data, completion: @escaping (Result<Product, Error>) -> Void) {
         StorageService.shared.upload(id: product.id, image: image) { result in
             switch result {
@@ -148,6 +150,68 @@ class DataBaseService {
             case .failure(let error):
                 completion(.failure(error))
             }
+        }
+    }
+    
+    func getProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
+        self.productsRef.getDocuments { qSnap, error in
+            
+            guard let qSnap = qSnap else {
+                if let error = error {
+                    completion(.failure(error))
+                }
+                return
+            }
+            let docs = qSnap.documents
+            
+            var products = [Product]()
+            
+            for doc in docs {
+                guard let product = Product(doc: doc) else { return }
+                products.append(product)
+            }
+            completion(.success(products))
+        }
+    }
+    
+// MARK: - methods for drinks
+    func setDrink(drink: Product, image: Data, completion: @escaping (Result<Product, Error>) -> Void) {
+        StorageService.shared.uploadDrink(id: drink.id, image: image) { result in
+            switch result {
+            case .success(let sizeInfo):
+                print(sizeInfo)
+                
+                self.drinksRef.document(drink.id).setData(drink.representation) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(drink))
+                    }
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getDrinks(completion: @escaping (Result<[Product], Error>) -> Void) {
+        self.drinksRef.getDocuments { qSnap, error in
+            
+            guard let qSnap = qSnap else {
+                if let error = error {
+                    completion(.failure(error))
+                }
+                return
+            }
+            let docs = qSnap.documents
+            
+            var drinks = [Product]()
+            
+            for doc in docs {
+                guard let drink = Product(doc: doc) else { return }
+                drinks.append(drink)
+            }
+            completion(.success(drinks))
         }
     }
     

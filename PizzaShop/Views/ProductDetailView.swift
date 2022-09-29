@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
-    var viewModel: ProductDetailViewModel
+    let viewModel: ProductDetailViewModel
     @State private var size = "Small"
     @State private var count = 1
     
@@ -20,13 +20,15 @@ struct ProductDetailView: View {
         VStack {
             VStack(alignment: .leading) {
                 
-                Image("pizzaPH")
+                Image(uiImage: viewModel.image)
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: 260)
+                    .cornerRadius(20)
+                    .padding(.horizontal)
                 
                 
                 HStack {
-                    Text("\(viewModel.product.title)!")
+                    Text("\(viewModel.product.title)")
                         .font(.title2.bold())
                         Spacer()
                     Text("\(viewModel.getPrice(size: self.size)) ₽")
@@ -70,7 +72,9 @@ struct ProductDetailView: View {
                     .background(LinearGradient(colors: [Color("orange"), Color("vineRed")], startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(30)
             }
-            
+            .onAppear {
+                viewModel.getImage()
+            }
             
             Spacer()
         }
@@ -84,7 +88,8 @@ struct ProductDetailView_Previews: PreviewProvider {
             title: "Burger - pizza",
             imageURL: "Not found",
             price: 500,
-            description: "Nice with beer"
+            description: "Nice with beer",
+            isRecommend: true
         )))
     }
 }

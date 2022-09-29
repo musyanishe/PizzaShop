@@ -33,7 +33,8 @@ struct PositionCell_Previews: PreviewProvider {
                                 title: "Burger - Pizza",
                                 imageURL: "pizzaPH",
                                 price: 350,
-                                description: "Nice with beer"),
+                                description: "Nice with beer",
+                               isRecommend: true),
                                count: 3))
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE31E7C228E1C452006DE893 /* AddDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31E7C128E1C452006DE893 /* AddDrinkView.swift */; };
 		CE39C7C328D35D0A00C27AAD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39C7C228D35D0A00C27AAD /* StorageService.swift */; };
 		CE3BB89628B10E62009C9996 /* PizzaShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */; };
 		CE3BB89828B10E62009C9996 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89728B10E62009C9996 /* AuthView.swift */; };
@@ -31,10 +32,13 @@
 		CE862F3F28C7865F0076FD78 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE862F3E28C7865F0076FD78 /* ProfileViewModel.swift */; };
 		CE8B4AA328C88319002DABED /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B4AA228C88319002DABED /* Order.swift */; };
 		CE8B4AA528C88CC0002DABED /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B4AA428C88CC0002DABED /* OrderStatus.swift */; };
+		CEB02A4628E57D7F00E97046 /* DrinkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB02A4528E57D7E00E97046 /* DrinkDetailViewModel.swift */; };
+		CEB02A4828E57FC500E97046 /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB02A4728E57FC500E97046 /* DrinkDetailView.swift */; };
 		CEB2EE3528CA14DC003823B4 /* AdminOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3428CA14DC003823B4 /* AdminOrdersView.swift */; };
 		CEB2EE3728CA1701003823B4 /* AdminOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3628CA1701003823B4 /* AdminOrdersViewModel.swift */; };
 		CEB2EE3928CA19E1003823B4 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3828CA19E0003823B4 /* OrderView.swift */; };
 		CEB2EE3B28CA19FC003823B4 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2EE3A28CA19FC003823B4 /* OrderViewModel.swift */; };
+		CEB9699928E5987400F50762 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9699828E5987400F50762 /* DrinkCell.swift */; };
 		CEC7DB5A28B1853200E85D41 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5928B1853200E85D41 /* Product.swift */; };
 		CEC7DB5D28B1861000E85D41 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5C28B1861000E85D41 /* ProductCell.swift */; };
 		CEC7DB6028B18DFB00E85D41 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7DB5F28B18DFB00E85D41 /* CatalogViewModel.swift */; };
@@ -45,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE31E7C128E1C452006DE893 /* AddDrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkView.swift; sourceTree = "<group>"; };
 		CE39C7C228D35D0A00C27AAD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		CE3BB89228B10E62009C9996 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopApp.swift; sourceTree = "<group>"; };
@@ -67,10 +72,13 @@
 		CE862F3E28C7865F0076FD78 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CE8B4AA228C88319002DABED /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CE8B4AA428C88CC0002DABED /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderStatus.swift; path = PizzaShop/Models/OrderStatus.swift; sourceTree = SOURCE_ROOT; };
+		CEB02A4528E57D7E00E97046 /* DrinkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewModel.swift; sourceTree = "<group>"; };
+		CEB02A4728E57FC500E97046 /* DrinkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailView.swift; sourceTree = "<group>"; };
 		CEB2EE3428CA14DC003823B4 /* AdminOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersView.swift; sourceTree = "<group>"; };
 		CEB2EE3628CA1701003823B4 /* AdminOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersViewModel.swift; sourceTree = "<group>"; };
 		CEB2EE3828CA19E0003823B4 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		CEB2EE3A28CA19FC003823B4 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		CEB9699828E5987400F50762 /* DrinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 		CEC7DB5928B1853200E85D41 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CEC7DB5C28B1861000E85D41 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		CEC7DB5F28B18DFB00E85D41 /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 				CEB2EE3428CA14DC003823B4 /* AdminOrdersView.swift */,
 				CEB2EE3828CA19E0003823B4 /* OrderView.swift */,
 				CECFBFFE28D0B2BC00AA7457 /* AddProductView.swift */,
+				CE31E7C128E1C452006DE893 /* AddDrinkView.swift */,
 			);
 			path = AdminInterface;
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 				CE3BB8A928B13039009C9996 /* CartView.swift */,
 				CE3BB8AB28B13044009C9996 /* ProfileView.swift */,
 				CEEA610328B2D12800115881 /* ProductDetailView.swift */,
+				CEB02A4728E57FC500E97046 /* DrinkDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC7DB5C28B1861000E85D41 /* ProductCell.swift */,
+				CEB9699828E5987400F50762 /* DrinkCell.swift */,
 				CE7DE5D428B4C75B00A1EB23 /* PositionCell.swift */,
 				CE510FE128C92DC000C09558 /* OrderCell.swift */,
 				CECFBFFC28D0AE4000AA7457 /* ImagePicker.swift */,
@@ -196,6 +207,7 @@
 			children = (
 				CEC7DB5F28B18DFB00E85D41 /* CatalogViewModel.swift */,
 				CEEA610528B2D62C00115881 /* ProductDetailViewModel.swift */,
+				CEB02A4528E57D7E00E97046 /* DrinkDetailViewModel.swift */,
 				CE7DE5D228B4C43B00A1EB23 /* CartViewModel.swift */,
 				CE5128BC28C61CB0007EA95D /* MainTabBarViewModel.swift */,
 				CE862F3E28C7865F0076FD78 /* ProfileViewModel.swift */,
@@ -294,9 +306,11 @@
 				CE7DE5D128B4C3E100A1EB23 /* Position.swift in Sources */,
 				CE7DE5D328B4C43B00A1EB23 /* CartViewModel.swift in Sources */,
 				CE3BB89828B10E62009C9996 /* AuthView.swift in Sources */,
+				CEB02A4628E57D7F00E97046 /* DrinkDetailViewModel.swift in Sources */,
 				CE3BB8A628B12C52009C9996 /* MainTabBarView.swift in Sources */,
 				CE7DE5D528B4C75C00A1EB23 /* PositionCell.swift in Sources */,
 				CE3BB8A828B1302E009C9996 /* CatalogView.swift in Sources */,
+				CE31E7C228E1C452006DE893 /* AddDrinkView.swift in Sources */,
 				CEB2EE3528CA14DC003823B4 /* AdminOrdersView.swift in Sources */,
 				CEEA610628B2D62C00115881 /* ProductDetailViewModel.swift in Sources */,
 				CE510FE228C92DC000C09558 /* OrderCell.swift in Sources */,
@@ -304,8 +318,10 @@
 				CE39C7C328D35D0A00C27AAD /* StorageService.swift in Sources */,
 				CE8B4AA528C88CC0002DABED /* OrderStatus.swift in Sources */,
 				CE5128BD28C61CB1007EA95D /* MainTabBarViewModel.swift in Sources */,
+				CEB02A4828E57FC500E97046 /* DrinkDetailView.swift in Sources */,
 				CE5128BF28C62399007EA95D /* PropertiesUser.swift in Sources */,
 				CE3BB8AC28B13044009C9996 /* ProfileView.swift in Sources */,
+				CEB9699928E5987400F50762 /* DrinkCell.swift in Sources */,
 				CEB2EE3928CA19E1003823B4 /* OrderView.swift in Sources */,
 				CEC7DB5D28B1861000E85D41 /* ProductCell.swift in Sources */,
 				CE3BB89628B10E62009C9996 /* PizzaShopApp.swift in Sources */,
@@ -450,7 +466,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +476,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -481,7 +497,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,7 +507,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,31 +1,31 @@
 //
-//  ProductCell.swift
+//  DrinkCell.swift
 //  PizzaShop
 //
-//  Created by Евгения Шевцова on 21.08.2022.
+//  Created by Евгения Шевцова on 29.09.2022.
 //
 
 import SwiftUI
 
-struct ProductCell: View {
+struct DrinkCell: View {
     
-    @State private var uiImage = UIImage(named: "pizzaPH")
-    var product: Product
+    @State private var uiImage = UIImage(named: "GreenTea")!
+    var drink: Product
     
     var body: some View {
         VStack {
-            Image(uiImage: uiImage!)
+            Image(uiImage: uiImage)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: screen.width * 0.45)
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: screen.width * 0.35)
                 .clipped()
                 .cornerRadius(20)
             
             HStack {
-                Text(product.title)
+                Text(drink.title)
                     .font(.custom("AvenirNext - regular", size: 12))
                 Spacer()
-                Text("\(product.price) ₽")
+                Text("\(drink.price) ₽")
                     .font(.custom("AvenirNext - bold", size: 12))
             }
             .padding(.horizontal)
@@ -36,28 +36,30 @@ struct ProductCell: View {
         .cornerRadius(16)
         .shadow(radius: 10)
         .onAppear {
-            StorageService.shared.downloadProductImage(id: product.id) { result in
+            StorageService.shared.downloadDrinkImage(id: drink.id) { result in
                 switch result {
                 case .success(let data):
-                    if let data = UIImage(data: data) {
-                        self.uiImage = data
+                    if let image = UIImage(data: data) {
+                        self.uiImage = image
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
             }
         }
+        
+    
     }
 }
 
-struct ProductCell_Previews: PreviewProvider {
+struct DrinkCell_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCell(product: Product(
+        DrinkCell(drink: Product(
             id: "1",
-            title: "Burger - pizza",
+            title: "Green tea",
             imageURL: "Not found",
-            price: 500,
-            description: "Nice with beer",
+            price: 132,
+            description: "Fresh drink",
             isRecommend: false
         ))
     }

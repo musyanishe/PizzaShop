@@ -17,7 +17,7 @@ struct MainTabBarView: View {
         TabView {
             
             NavigationView{
-                CatalogView()
+                CatalogView(viewModel: CatalogViewModel.shared)
             }
             .tabItem {
                 Image(systemName: "menucard")
