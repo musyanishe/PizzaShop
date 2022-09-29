@@ -60,7 +60,7 @@ struct DrinkDetailView: View {
                     .padding(.horizontal, 60)
                     .foregroundColor(.black)
                     .font(.title3.bold())
-                    .background(LinearGradient(colors: [Color("orange"), Color("vineRed")], startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(colors: [Color.theme.orange, Color.theme.vineRed], startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(30)
             }
             .padding()

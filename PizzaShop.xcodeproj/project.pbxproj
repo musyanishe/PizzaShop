@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2985F728E5D85E00A34A3C /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2985F628E5D85E00A34A3C /* Extension+Color.swift */; };
 		CE31E7C228E1C452006DE893 /* AddDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31E7C128E1C452006DE893 /* AddDrinkView.swift */; };
 		CE39C7C328D35D0A00C27AAD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39C7C228D35D0A00C27AAD /* StorageService.swift */; };
 		CE3BB89628B10E62009C9996 /* PizzaShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2985F628E5D85E00A34A3C /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		CE31E7C128E1C452006DE893 /* AddDrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkView.swift; sourceTree = "<group>"; };
 		CE39C7C228D35D0A00C27AAD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		CE3BB89228B10E62009C9996 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2985F528E5D84B00A34A3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE2985F628E5D85E00A34A3C /* Extension+Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CE3BB88928B10E62009C9996 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		CE3BB89428B10E62009C9996 /* PizzaShop */ = {
 			isa = PBXGroup;
 			children = (
+				CE2985F528E5D84B00A34A3C /* Extensions */,
 				CE3BB89528B10E62009C9996 /* PizzaShopApp.swift */,
 				CE5B276628B6518400B9453E /* Services */,
 				CEC7DB5B28B185E600E85D41 /* Components */,
@@ -321,6 +332,7 @@
 				CEB02A4828E57FC500E97046 /* DrinkDetailView.swift in Sources */,
 				CE5128BF28C62399007EA95D /* PropertiesUser.swift in Sources */,
 				CE3BB8AC28B13044009C9996 /* ProfileView.swift in Sources */,
+				CE2985F728E5D85E00A34A3C /* Extension+Color.swift in Sources */,
 				CEB9699928E5987400F50762 /* DrinkCell.swift in Sources */,
 				CEB2EE3928CA19E1003823B4 /* OrderView.swift in Sources */,
 				CEC7DB5D28B1861000E85D41 /* ProductCell.swift in Sources */,

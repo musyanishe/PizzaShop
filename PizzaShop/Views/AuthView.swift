@@ -24,20 +24,20 @@ struct AuthView: View {
                 .padding()
                 .padding(.horizontal, 30)
                 .font(.title2.bold())
-                .background(Color("whiteAlpha"))
+                .background(Color.theme.whiteAlpha)
                 .cornerRadius(30)
             
             VStack {
                 TextField("Введите E-mail", text: $mail)
                     .padding()
-                    .background(Color("whiteAlpha"))
+                    .background(Color.theme.whiteAlpha)
                     .cornerRadius(12)
                     .padding(8)
                     .padding(.horizontal, 12)
                 
                 SecureField("Введите пароль", text: $password)
                     .padding()
-                    .background(Color("whiteAlpha"))
+                    .background(Color.theme.whiteAlpha)
                     .cornerRadius(12)
                     .padding(8)
                     .padding(.horizontal, 12)
@@ -45,7 +45,7 @@ struct AuthView: View {
                 if !isAuth {
                     SecureField("Повторите пароль", text: $confirmPassword)
                         .padding()
-                        .background(Color("whiteAlpha"))
+                        .background(Color.theme.whiteAlpha)
                         .cornerRadius(12)
                         .padding(8)
                         .padding(.horizontal, 12)
@@ -100,7 +100,7 @@ struct AuthView: View {
                     Text(isAuth ? "Войти" : "Создать аккаунт")
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(LinearGradient(colors: [Color("orange"), Color("vineRed")], startPoint: .leading, endPoint: .trailing))
+                        .background(LinearGradient(colors: [Color.theme.orange, Color.theme.vineRed], startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(12)
                         .padding(8)
                         .padding(.horizontal, 12)
@@ -118,13 +118,13 @@ struct AuthView: View {
                         .padding(8)
                         .padding(.horizontal, 12)
                         .font(.title3.bold())
-                        .foregroundColor(Color("vineRed"))
+                        .foregroundColor(Color.theme.vineRed)
                 }
                 
             }
             .padding()
             .padding(.top, 10)
-            .background(Color("whiteAlpha"))
+            .background(Color.theme.whiteAlpha)
             .cornerRadius(25)
             .padding(isAuth ? 30 : 12)
             .alert(alertMessage, isPresented: $isAlertShown) {
